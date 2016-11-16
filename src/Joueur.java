@@ -10,7 +10,7 @@ public class Joueur {
 
 	public String nom;
 	public String prenom;
-	
+	public int [] score;
 	public int vie;
 	public int etat;
 	
@@ -42,6 +42,12 @@ public class Joueur {
 	}
 	private void setEtat(int etat) {
 		this.etat = etat;
+	}
+	private int[] getScore() {
+		return score;
+	}
+	private void setScore(int[] score) {
+		this.score = score;
 	}
 	
 	
