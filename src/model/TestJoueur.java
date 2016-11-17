@@ -35,7 +35,24 @@ public class TestJoueur {
 		j2.prenom="LNN";
 		j2.motEnCours="Programmation";
 		j2.idJoueur = 1;
+		
 		assertTrue(j1.equals(j2));
 	}
-
+	
+	@Test
+	public void testIdNegatif(){
+		Joueur j1 = new Joueur();
+		j1.nom="Ephec";
+		j1.prenom="LNN";
+		j1.motEnCours="Programmation";
+		j1.idJoueur = -1;
+		
+		Joueur j2 = new Joueur();
+		j2.nom="Ephec";
+		j2.prenom="LNN";
+		j2.motEnCours="Programmation";
+		j2.idJoueur = 1;
+		
+		assertFalse(j1.equals(j2));
+	}
 }
