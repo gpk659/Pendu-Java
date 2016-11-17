@@ -15,11 +15,11 @@ public class Joueur {
 	public int etat;
 	
 	private String motFinal;
-	private String motEnCours;
+	protected String motEnCours;
 	
 	
 	// getters & setters pour y acceder depuis les autres classes
-	private String getNom() {
+	public String getNom() {
 		return nom;
 	}
 	private void setNom(String nom) {
@@ -49,6 +49,12 @@ public class Joueur {
 	private void setScore(int[] score) {
 		this.score = score;
 	}
+	
+	@Override
+	public String toString() {
+		return "Joueur [nom=" + nom + ", prenom=" + prenom + ", motEnCours=" + motEnCours + "]";
+	}
+	
 	
 	
 
