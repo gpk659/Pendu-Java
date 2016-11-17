@@ -76,6 +76,10 @@ public class Joueur {
 	        return false;
 	   if(!other.prenom.equals(this.prenom))
 	        return false;
+	    if(other.idJoueur == 0 && this.idJoueur!=idJoueur)
+	        return false;
+	    if(!(other.idJoueur == (this.idJoueur)))
+	        return false;
 	   return true;
 	}
 
