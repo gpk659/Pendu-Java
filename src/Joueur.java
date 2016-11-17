@@ -56,6 +56,24 @@ public class Joueur {
 	}
 	
 	
-	
+	//methode equals
+	public boolean equals(Object obj){
+	    if (this == obj)
+	        return true;
+	    if (obj == null)
+	        return false;
+	    if (getClass() != obj.getClass())
+	        return false;
+	    Joueur other = (Joueur) obj;
+	    if(other.nom==null && this.nom!=null)
+	        return false;
+	     if(!other.nom.equals(this.nom))
+	        return false;
+	    if(other.prenom==null && this.prenom!=null)
+	        return false;
+	   if(!other.prenom.equals(this.prenom))
+	        return false;
+	   return true;
+	}
 
 }
