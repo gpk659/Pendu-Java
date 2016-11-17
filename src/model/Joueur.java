@@ -12,6 +12,7 @@ public class Joueur {
 
 	public String nom;
 	public String prenom;
+	public int idJoueur;
 	public int [] score;
 	public int vie;
 	public int etat;
@@ -54,7 +55,7 @@ public class Joueur {
 	
 	@Override
 	public String toString() {
-		return "Joueur [nom=" + nom + ", prenom=" + prenom + ", motEnCours=" + motEnCours + "]";
+		return "Joueur n° " + idJoueur + "\n" +"Nom : " + nom + "\n" +"Prénom : " + prenom + "\n";
 	}
 	
 	

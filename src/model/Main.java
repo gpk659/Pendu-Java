@@ -26,6 +26,7 @@ public class Main extends Joueur {
 	public static void main(String[] args) {
 		
 		Joueur j1 = new Joueur();
+		j1.idJoueur = j1.idJoueur+1;
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Quel est votre nom ? ");
@@ -34,13 +35,14 @@ public class Main extends Joueur {
 		
 		System.out.println("Quel est votre prenom ? ");
 		String strPrenom = sc.nextLine();
-		j1.nom= strPrenom;
+		j1.prenom= strPrenom;
 		
 		System.out.println("Quel mot voulez vous mettre ? ");
 		String strMot = sc.nextLine();
 		j1.motEnCours= strMot;
 		
 		Joueur j2 = new Joueur();
+		j2.idJoueur = j1.idJoueur+1;
 		Scanner scJ2 = new Scanner(System.in);
 		
 		System.out.println("Quel est votre nom ? ");
@@ -49,9 +51,11 @@ public class Main extends Joueur {
 		
 		System.out.println("Quel est votre prenom ? ");
 		String strPrenomJ2 = sc.nextLine();
-		j2.nom= strPrenomJ2;
+		j2.prenom= strPrenomJ2;
 		
 		System.out.println(j1.equals(j2));
+		System.out.println(j1);
+		System.out.println(j2);
 
 	}
 
