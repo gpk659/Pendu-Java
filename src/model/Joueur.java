@@ -12,7 +12,7 @@ public class Joueur {
 
 	public String nom;
 	public String prenom;
-	public int idJoueur;
+	public int idJoueur=0;
 	public int [] score;
 	public int vie;
 	public int etat;
@@ -78,6 +78,8 @@ public class Joueur {
 	        return false;
 	    if(other.idJoueur == 0 && this.idJoueur!=idJoueur)
 	        return false;
+	    if(other.idJoueur <0 && !(this.idJoueur<idJoueur))
+	    	return false;
 	    if(!(other.idJoueur == (this.idJoueur)))
 	        return false;
 	   return true;
