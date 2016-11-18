@@ -1,27 +1,34 @@
+/**
+ * 
+ * @author Grégory 2TL1
+ * @groupe Groupe n°4
+ * 
+ */
+
 package model;
 
 /**
  * 
- */
-
-/**
- * @author Grégory
+ * @class 
  *
  */
 public class Joueur {
 
-	public String nom;
-	public String prenom;
-	public int idJoueur=0;
+	private String nom;
+	private String prenom;
+	private static int nbJoueur=0;
+	private int idJoueur;
 	public int [] score;
 	public int vie;
 	public int etat;
-	
 	private String motFinal;
 	protected String motEnCours;
 	
 	
-	// getters & setters pour y acceder depuis les autres classes
+	/**
+	 * 
+	 * @return : retourne la variable pour pouvoir y accéder
+	 */
 	public String getNom() {
 		return nom;
 	}
@@ -55,10 +62,22 @@ public class Joueur {
 	
 	@Override
 	public String toString() {
-		return "Joueur n° " + idJoueur + "\n" +"Nom : " + nom + "\n" +"Prénom : " + prenom + "\n";
+		return "Joueur n° " + idJoueur + "\n" +"Nom : " + nom + "\n" +"Prénom : " + prenom + "\n"+"Il y a " + nbJoueur + " joueur(s).";
 	}
 	
-	
+	/**
+	 * @param nom : nom du joueur
+	 * @param prenom : prenom du joueur
+	 * 
+	 */
+	public Joueur(String nom, String prenom) {
+		super();
+		nbJoueur++;
+		idJoueur=nbJoueur;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.idJoueur = idJoueur;
+	}
 	//methode equals
 	public boolean equals(Object obj){
 	    if (this == obj)
@@ -84,5 +103,4 @@ public class Joueur {
 	        return false;
 	   return true;
 	}
-
 }

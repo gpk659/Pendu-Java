@@ -1,15 +1,15 @@
+/**
+ * 
+ * @author Grégory
+ * @groupe Groupe n°4
+ * @classe 2TL1
+ * 
+ */
+
 package model;
 
 import java.util.Scanner;
 
-/**
- * 
- */
-
-/**
- * @author Grégory
- *
- */
 public class Main extends Joueur {
 
 	/**
@@ -20,39 +20,39 @@ public class Main extends Joueur {
 	 */
 	
 	
+	public Main(String nom, String prenom) {
+		super(nom, prenom);
+	}
+
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		
-		Joueur j1 = new Joueur();
-		j1.idJoueur = j1.idJoueur+1;
 		Scanner sc = new Scanner(System.in);
 		
 		System.out.println("Quel est votre nom ? ");
 		String strNom = sc.nextLine();
-		j1.nom= strNom;
 		
 		System.out.println("Quel est votre prenom ? ");
 		String strPrenom = sc.nextLine();
-		j1.prenom= strPrenom;
 		
 		System.out.println("Quel mot voulez vous mettre ? ");
 		String strMot = sc.nextLine();
-		j1.motEnCours= strMot;
 		
-		Joueur j2 = new Joueur();
-		j2.idJoueur = j1.idJoueur+1;
+		Joueur j1 = new Joueur(strNom,strPrenom);
+		
+		//joueur 2
 		Scanner scJ2 = new Scanner(System.in);
 		
 		System.out.println("Quel est votre nom ? ");
 		String strNomJ2 = sc.nextLine();
-		j2.nom= strNomJ2;
-		
+				
 		System.out.println("Quel est votre prenom ? ");
 		String strPrenomJ2 = sc.nextLine();
-		j2.prenom= strPrenomJ2;
 		
+		Joueur j2 = new Joueur(strNomJ2,strPrenomJ2);
+		
+		//tests
 		System.out.println(j1.equals(j2));
 		System.out.println(j1);
 		System.out.println(j2);
