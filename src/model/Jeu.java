@@ -1,17 +1,15 @@
-/**
- * 
- */
 package model;
 
 /**
- * @author Gr�gory
+ * @author Grégory Pyck & Simon Barré
  *
  */
 public class Jeu {
+
 	int nbEssai;
 	
-	public Partie creerPartie(){
-		return null;
-		
+	
+	public static void main(String[] args) {
+		Partie p0 = new Partie();
 	}
 }
