@@ -23,6 +23,7 @@ public class Joueur {
 	public int etat;
 	private String motFinal;
 	protected String motEnCours;
+	private char [] LettreFausse; 
 	
 	
 	/**
