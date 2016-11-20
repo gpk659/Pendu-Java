@@ -46,6 +46,7 @@ public class Partie {
 		String strPrenom = sc.nextLine();
 		
 		Joueur j1 = new Joueur(strNom,strPrenom);
+		System.out.println(j1);
 	}
 	
 	public void updateScore(){
