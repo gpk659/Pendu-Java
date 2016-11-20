@@ -8,5 +8,10 @@ package model;
  *
  */
 public class Jeu {
-
+	int nbEssai;
+	
+	public Partie creerPartie(){
+		return null;
+		
+	}
 }
