@@ -3,7 +3,7 @@ package model;
 import java.util.Scanner;
 
 /**
- * @author Gregory Pyck & Simon Barre
+ * @author Gregory Pyck & Simon Barre 2TL1 G4
  *
  */
 public class Partie {
@@ -27,8 +27,8 @@ public class Partie {
 
 	public void creerJoueur(){
 		Joueur tabNJ[] = new Joueur[nbJoueur];
-		int i=1;
-		while (i<=nbJoueur){
+		int i=0;
+		while (i<nbJoueur){
 			tabNJ[i]= new Joueur();
 			i++;
 		}
