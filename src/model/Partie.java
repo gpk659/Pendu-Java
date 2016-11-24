@@ -26,11 +26,10 @@ public class Partie {
 	}
 
 	public void creerJoueur(){
-		String tabNJ[] = new String[nbJoueur+1];
+		Joueur tabNJ[] = new Joueur[nbJoueur];
 		int i=1;
 		while (i<=nbJoueur){
-			tabNJ[i]= "joueur" + i;
-			//Joueur jN = new Joueur();
+			tabNJ[i]= new Joueur();
 			i++;
 		}
 	}
