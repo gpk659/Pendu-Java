@@ -1,7 +1,7 @@
 /**
  * 
- * @author Grégory 2TL1
- * @groupe Groupe n°4
+ * @author GrÃ©gory 2TL1
+ * @groupe Groupe nÂ°4
  * 
  */
 
@@ -9,13 +9,12 @@ package model;
 
 /**
  * 
- * @class 
+ * @class  
  *
  */
 public class Joueur {
 
-	private String nom;
-	private String prenom;
+	private String pseudo;
 	private static int nbJoueur=0;
 	private int idJoueur;
 	public int [] score;
@@ -28,20 +27,15 @@ public class Joueur {
 	
 	/**
 	 * 
-	 * @return : retourne la variable pour pouvoir y accéder
+	 * @return : retourne la variable pour pouvoir y accÃ©der
 	 */
 	public String getNom() {
-		return nom;
+		return pseudo;
 	}
 	private void setNom(String nom) {
-		this.nom = nom;
+		this.pseudo = nom;
 	}
-	private String getPrenom() {
-		return prenom;
-	}
-	private void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
+
 	private int getVie() {
 		return vie;
 	}
@@ -61,22 +55,20 @@ public class Joueur {
 		this.score = score;
 	}
 	
-	@Override
+	
 	public String toString() {
-		return "Joueur n° " + idJoueur + "\n" +"Nom : " + nom + "\n" +"Prénom : " + prenom + "\n"+"Il y a " + nbJoueur + " joueur(s).";
+		return "Joueur nÂ° " + idJoueur + "\n" +"Peuso : " + pseudo + "\n"+"Il y a " + nbJoueur + " joueur(s).";
 	}
 	
 	/**
-	 * @param nom : nom du joueur
-	 * @param prenom : prenom du joueur
+	 * @param pseudo : nom du joueur
 	 * 
 	 */
-	public Joueur(String nom, String prenom) {
+	public Joueur(String peuso) {
 		super();
 		nbJoueur++;
 		idJoueur=nbJoueur;
-		this.nom = nom;
-		this.prenom = prenom;
+		this.pseudo = pseudo;
 		this.idJoueur = idJoueur;
 	}
 	//methode equals
@@ -88,13 +80,9 @@ public class Joueur {
 	    if (getClass() != obj.getClass())
 	        return false;
 	    Joueur other = (Joueur) obj;
-	    if(other.nom==null && this.nom!=null)
+	    if(other.pseudo==null && this.pseudo!=null)
 	        return false;
-	     if(!other.nom.equals(this.nom))
-	        return false;
-	    if(other.prenom==null && this.prenom!=null)
-	        return false;
-	   if(!other.prenom.equals(this.prenom))
+	     if(!other.pseudo.equals(this.pseudo))
 	        return false;
 	    if(other.idJoueur == 0 && this.idJoueur!=idJoueur)
 	        return false;
