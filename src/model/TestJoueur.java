@@ -1,7 +1,7 @@
 /**
  * 
- * @author Grégory
- * @groupe Groupe n°4
+ * @author GrÃ©gory
+ * @groupe Groupe nÂ°4
  * @classe 2TL1
  * 
  */
@@ -15,18 +15,18 @@ public class TestJoueur {
 
 	@Test
 	public void testFalse() {
-		Joueur j1 = new Joueur("Pyck","Grégory");
+		Joueur j1 = new Joueur("blabla");
 		
-		Joueur j2 = new Joueur("Ephec","LLN");
+		Joueur j2 = new Joueur("Ephec");
 		
 		assertFalse(j1.equals(j2));
 		
 	}
 	@Test
 	public void testTrue(){
-		Joueur j1 = new Joueur("Ephec","LLN");
+		Joueur j1 = new Joueur("Ephec");
 		
-		Joueur j2 = new Joueur("Ephec","LLN");
+		Joueur j2 = new Joueur("Ephec");
 		
 		assertTrue(j1.equals(j2));
 	}
