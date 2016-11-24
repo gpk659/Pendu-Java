@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Partie {
 
 	private int nbJoueur;
-	protected Mot mot;
+	//protected Mot mot;
 	protected int joueurActif;
 	protected int point[] = {30,20,15,10,5,1,0};
 	private Scanner sc = new Scanner(System.in);
@@ -20,33 +20,19 @@ public class Partie {
 	}
 	
 	public Partie() {
-		super();
+		System.out.println("Conbien de joueur ?");
+		nbJoueur = sc.nextInt();
 		creerJoueur();
 	}
 
 	public void creerJoueur(){
-		/*for (int i = 0; i<nbJoueur;){
+		String tabNJ[] = new String[nbJoueur+1];
+		int i=1;
+		while (i<=nbJoueur){
+			tabNJ[i]= "joueur" + i;
+			//Joueur jN = new Joueur();
 			i++;
-			System.out.println("Quel est votre nom ? ");
-			String strNom = sc.nextLine();
-			
-			System.out.println("Quel est votre prenom ? ");
-			String strPrenom = sc.nextLine();
-			
-			String nomJoueur = "joueur" + i;
-			
-			Joueur nomJoueur = new Joueur(strNom,strPrenom);
-			
-		}*/
-		
-		System.out.println("Quel est votre nom ? ");
-		String strNom = sc.nextLine();
-		
-		System.out.println("Quel est votre prenom ? ");
-		String strPrenom = sc.nextLine();
-		
-		Joueur j1 = new Joueur(strNom,strPrenom);
-		System.out.println(j1);
+		}
 	}
 	
 	public void updateScore(){
