@@ -7,6 +7,8 @@
 
 package model;
 
+import java.util.Scanner;
+
 /**
  * 
  * @class  
@@ -15,7 +17,7 @@ package model;
 public class Joueur {
 
 	private String pseudo;
-	private static int nbJoueur=0;
+	//private static int nbJoueur=0; -> longeur du tableau, voir partie...
 	private int idJoueur;
 	public int [] score;
 	public int vie;
@@ -23,6 +25,7 @@ public class Joueur {
 	private String motFinal;
 	protected String motEnCours;
 	private char [] LettreFausse; 
+	private Scanner sc = new Scanner(System.in);
 	
 	
 	/**
@@ -57,20 +60,27 @@ public class Joueur {
 	
 	
 	public String toString() {
-		return "Joueur n° " + idJoueur + "\n" +"Peuso : " + pseudo + "\n"+"Il y a " + nbJoueur + " joueur(s).";
+		return "Joueur n° " + idJoueur + "\n" +"Peuso : " + pseudo + "\n"+"Il y a " /*+ nbJoueur*/ + " joueur(s)."; //existe plus voir explication plus haut ...
 	}
 	
 	/**
 	 * @param pseudo : nom du joueur
 	 * 
 	 */
-	public Joueur(String peuso) {
-		super();
-		nbJoueur++;
-		idJoueur=nbJoueur;
+	public Joueur(String pseudo) {
+		//super();       inutile
+		//nbJoueur++;    existe plus voir explication plus haut ...
+		//idJoueur=nbJoueur;
 		this.pseudo = pseudo;
-		this.idJoueur = idJoueur;
+		//this.idJoueur = idJoueur;
 	}
+	
+	public Joueur() {
+		System.out.println("Quel est votre pseudo ? ");
+		String strPseudo = sc.nextLine();
+		this.pseudo = strPseudo;
+	}
+	
 	//methode equals
 	public boolean equals(Object obj){
 	    if (this == obj)
