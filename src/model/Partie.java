@@ -21,11 +21,13 @@ public class Partie {
 		System.out.println("Conbien de joueur ?");
 		creerJoueur(sc.nextInt());
 		// + Creer mot, mais pas encore fini (au 25/11/16)
+		Mot m1 = new Mot();
 	}
 	
 	public Partie(int nbJ, String pseudo) {
 		creerJoueur2(nbJ, pseudo);
 		// + Creer mot, mais pas encore fini (au 25/11/16)
+		Mot m1 = new Mot();
 	}
 
 	public void creerJoueur(int nbJ){
