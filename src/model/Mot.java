@@ -73,4 +73,74 @@ public class Mot{
 		this.tabChar = this.secretMot.toCharArray();
 		this.error = 0;
 	}
+
+	
+	public int verifyWord(char c){
+		
+		boolean bok = false;
+		
+		for(int i = 0; i < this.word.length(); i++){
+			
+			if(this.word.toUpperCase().charAt(i) == c){
+				this.tabChar[i] = c;
+				System.out.println("bonne lettre !!!!!!!");
+				bok = true;
+			}
+		}
+		++this.nbreCoup;
+		this.secretMot = new String(this.tabChar);
+		System.out.println("Mot secret = " + this.word);
+		return (bok == true) ? 1 : -1;
+	}
+	
+	public int verifyWord(char[] tc){
+		
+		boolean bok = false;
+		
+		for(char c : tc)
+		{
+			for(int i = 0; i < this.word.length(); i++){
+				
+				if(this.word.toUpperCase().charAt(i) == c){
+					this.tabChar[i] = c;
+					System.out.println("OK !");
+					bok = true;
+				}
+			}
+		}	
+		++this.nbreCoup;	
+		this.secretMot = new String(this.tabChar);
+		System.out.println("Mot secret = " + this.word);
+		
+		return (bok == true) ? 1 : -1;
+	}
+	
+	public boolean isFinished(){
+		
+		for(char c : this.tabChar){
+			if(c == '*')
+				return false;
+		}
+		return true;
+	}
+	
+	public String getWord() {
+		return word;
+	}
+
+	public String getSecretWord() {
+		return secretMot;
+	}
+	
+	public int getNombreErreur(){
+		return this.error;
+	}
+	
+	public void setNombreErreur(int nbre){
+		this.error = nbre;
+	}
+
+	public int getNombreCoup() {
+		return nbreCoup;
+	}
 }
