@@ -89,7 +89,8 @@ public class Mot{
 		}
 		++this.nbreCoup;
 		this.secretMot = new String(this.tabChar);
-		System.out.println("Mot secret = " + this.word);
+		System.out.println("Mot secret = " + this.secretMot);
+		System.out.println("Mot = "+this.word);
 		return (bok == true) ? 1 : -1;
 	}
 	
@@ -110,7 +111,8 @@ public class Mot{
 		}	
 		++this.nbreCoup;	
 		this.secretMot = new String(this.tabChar);
-		System.out.println("Mot secret = " + this.word);
+		System.out.println("Mot secret = " + this.secretMot);
+		System.out.println("Mot = "+this.word);
 		
 		return (bok == true) ? 1 : -1;
 	}
