@@ -39,7 +39,7 @@ public class Partie {
 		}
 	}
 	
-	public void creerJoueur2(int nbJ, String pseudo){
+	public void creerJoueur(int nbJ, String pseudo){
 		tabNbJoueur = new Joueur[nbJ];
 		int i=0;
 		while (i<nbJ){
