@@ -21,7 +21,7 @@ public class Mot{
 
 	public Mot(){
 		initWord();
-		System.out.println(word);
+		//System.out.println(word);
 		System.out.println(secretMot);
 	}
 	
@@ -75,23 +75,26 @@ public class Mot{
 	}
 
 	
-	public int verifyWord(char c){
+	public void verifyWord(char c){
 		
-		boolean bok = false;
+		boolean bok=false;
 		
 		for(int i = 0; i < this.word.length(); i++){
 			
-			if(this.word.toUpperCase().charAt(i) == c){
+			if(word.toUpperCase().charAt(i) == c){
 				this.tabChar[i] = c;
 				System.out.println("bonne lettre !!!!!!!");
 				bok = true;
 			}
 		}
-		++this.nbreCoup;
+		if(bok==false){
+			System.out.println("Mauvaise lettre!!!!!");
+		}
+		//++this.nbreCoup;
 		this.secretMot = new String(this.tabChar);
 		System.out.println("Mot secret = " + this.secretMot);
-		System.out.println("Mot = "+this.word);
-		return (bok == true) ? 1 : -1;
+		//System.out.println("Mot = "+this.word);
+		//return (bok == true) ? 1 : -1;
 	}
 	
 	public int verifyWord(char[] tc){
