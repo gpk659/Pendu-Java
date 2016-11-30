@@ -2,31 +2,38 @@ package model;
 
 import java.util.Scanner;
 
+
 /**
  * @author Gregory Pyck & Simon Barre 2TL1 G4
  */
-public class Partie {
+public class Partie{
 
 	protected Joueur tabNbJoueur[]; //= new Joueur[1];
-	//protected Mot mot;
+	private Mot mot;
 	//protected int joueurActif;
 	protected int point[] = {30,20,15,10,5,1,0};
 	private Scanner sc = new Scanner(System.in);
 	
-	public void definirJoueurActif(){
-		
-	}
+	public void definirJoueurActif(){}
 	
 	public Partie() {
 		System.out.println("Conbien de joueur ?");
 		creerJoueur(sc.nextInt());
-		// + Creer mot, mais pas encore fini (au 25/11/16)
-		Mot m1 = new Mot();
+
+		this.mot = new Mot();
+
+		//verification du mot
+		while (!(mot.getSecretWord().equals(mot.getWord()))) {
+			System.out.println("Veuillez entrer une lettre.");
+			char lettre = sc.next().charAt(0);			
+			this.mot.verifyWord(lettre);
+		}if(mot.getSecretWord().equals(mot.getWord())){
+			System.out.println("Bravo vous avez trouvé le mot!");
+		}
 	}
 	
 	public Partie(int nbJ, String pseudo) {
-		creerJoueur2(nbJ, pseudo);
-		// + Creer mot, mais pas encore fini (au 25/11/16)
+		creerJoueur(nbJ, pseudo);
 		Mot m1 = new Mot();
 	}
 
@@ -55,6 +62,15 @@ public class Partie {
 	
 	public void affichScore(){
 		
+	}
+	
+	//getters & setters
+	public Joueur[] getTabNbJoueur() {
+		return tabNbJoueur;
+	}
+
+	public void setTabNbJoueur(Joueur[] tabNbJoueur) {
+		this.tabNbJoueur = tabNbJoueur;
 	}
 	
 	//methode equals
