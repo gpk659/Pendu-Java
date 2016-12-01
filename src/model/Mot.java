@@ -1,7 +1,7 @@
 package model;
 
 /**
- * @author Grégory
+ * @author GrÃ©gory
  */
 
 import java.io.File;
@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 
 public class Mot{
 
-	private String word = "", secretMot = "";
+	private String word = "", secretWord = "";
 	private char[] tabChar;
 	private int error = 0;
 	private int nbreCoup = 0;
@@ -22,7 +22,7 @@ public class Mot{
 	public Mot(){
 		initWord();
 		//System.out.println(word);
-		System.out.println(secretMot);
+		System.out.println(secretWord);
 	}
 	public Mot(String mot){
 		this.word=mot;
@@ -41,7 +41,7 @@ public class Mot{
 			LineNumberReader fnr = new LineNumberReader(new FileReader(new File("files/dictionnaire.txt")));
 			int carac;
 			this.word = "";
-			this.secretMot= "";
+			this.secretWord= "";
 			while((carac = fnr.read()) != -1){
 				if(fnr.getLineNumber() == (i+1))
 					break;
@@ -54,28 +54,28 @@ public class Mot{
 			}
 			
 			/**
-			 * trim() : est utilisé pour supprimer les espaces au début et à la fin du mot
-			 * toUpperCase() : convertit tous les caractères de la chaîne en majuscules
+			 * trim() : est utilisÃ© pour supprimer les espaces au dÃ©but et Ã  la fin du mot
+			 * toUpperCase() : convertit tous les caractÃ¨res de la chaÃ®ne en majuscules
 			 */
 			this.word = this.word.trim().toUpperCase();
 			
 			for(int j = 0; j < this.word.length(); j++)
-			{//	on injecte une * pour chaque caractère en parcourant le mot avec charAt
-				this.secretMot += (this.word.charAt(j) != '\'' && this.word.charAt(j) != '-') ? "*" : this.word.charAt(j);
+			{//	on injecte une * pour chaque caractÃ¨re en parcourant le mot avec charAt
+				this.secretWord += (this.word.charAt(j) != '\'' && this.word.charAt(j) != '-') ? "*" : this.word.charAt(j);
 			}
 			
 			fnr.close();//on ferme l'ouverture du fichier
 			this.nbreCoup = 0;
-		} catch (FileNotFoundException e) {//gestions des erreurs si l'ouverture du fichier n'est pas réussie
+		} catch (FileNotFoundException e) {//gestions des erreurs si l'ouverture du fichier n'est pas rÃ©ussie
 			JOptionPane.showMessageDialog(null, "Erreur de chargement depuis le fichier de mots !", "ERREUR", JOptionPane.ERROR_MESSAGE);
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, "Erreur de chargement depuis le fichier de mots !", "ERREUR", JOptionPane.ERROR_MESSAGE);
 		}
 		
 		/**
-		 * toCharArray : convertit les * en tableau de charactère
+		 * toCharArray : convertit les * en tableau de charactÃ¨re
 		 */
-		this.tabChar = this.secretMot.toCharArray();
+		this.tabChar = this.secretWord.toCharArray();
 		this.error = 0;
 	}
 
@@ -97,8 +97,8 @@ public class Mot{
 		}
 		
 		//++this.nbreCoup;
-		this.secretMot = new String(this.tabChar);
-		System.out.println("Mot secret = " + this.secretMot);
+		this.secretWord = new String(this.tabChar);
+		System.out.println("Mot secret = " + this.secretWord);
 		//System.out.println("Mot = "+this.word);
 		//return (bok == true) ? 1 : -1;
 	}
@@ -119,8 +119,8 @@ public class Mot{
 			}
 		}	
 		++this.nbreCoup;	
-		this.secretMot = new String(this.tabChar);
-		System.out.println("Mot secret = " + this.secretMot);
+		this.secretWord = new String(this.tabChar);
+		System.out.println("Mot secret = " + this.secretWord);
 		System.out.println("Mot = "+this.word);
 		
 		return (bok == true) ? 1 : -1;
@@ -147,7 +147,7 @@ public class Mot{
 	}
 
 	public String getSecretWord() {
-		return secretMot;
+		return secretWord;
 	}
 	
 	public int getNombreErreur(){
