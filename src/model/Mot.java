@@ -33,7 +33,7 @@ public class Mot{
 		}
 		
 		try {//ouverture du fichier
-			LineNumberReader fnr = new LineNumberReader(new FileReader(new File("file/dictionnaire.txt")));
+			LineNumberReader fnr = new LineNumberReader(new FileReader(new File("files/dictionnaire.txt")));
 			int carac;
 			this.word = "";
 			this.secretMot= "";
@@ -86,10 +86,11 @@ public class Mot{
 				System.out.println("bonne lettre !!!!!!!");
 				bok = true;
 			}
-		}
-		if(bok==false){
+		}if(bok==false){
 			System.out.println("Mauvaise lettre!!!!!");
+			error++;
 		}
+		
 		//++this.nbreCoup;
 		this.secretMot = new String(this.tabChar);
 		System.out.println("Mot secret = " + this.secretMot);
