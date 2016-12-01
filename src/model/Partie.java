@@ -21,16 +21,21 @@ public class Partie{
 		creerJoueur(sc.nextInt());
 
 		this.mot = new Mot();
-
+		
 		//verification du mot
-		while (!(mot.getSecretWord().equals(mot.getWord()))) {
-			System.out.println("Veuillez entrer une lettre.");
-			char lettre = sc.next().charAt(0);			
-			this.mot.verifyWord(lettre);
-		}if(mot.getSecretWord().equals(mot.getWord())){
-			System.out.println("Bravo vous avez trouvé le mot!");
+		
+			while (mot.getNombreErreur() != Jeu.NBESSAIS && !(mot.getSecretWord().equals(mot.getWord()))) {
+				System.out.println("Veuillez entrer une lettre.");
+				char lettre = sc.next().charAt(0);			
+				this.mot.verifyWord(lettre);
+				System.out.println("vous avez fait " + this.mot.getNombreErreur() + " erreur(s)");
+			}if(mot.getSecretWord().equals(mot.getWord())){
+				System.out.println("Bravo vous avez trouvé le mot!");
+			}if (mot.getNombreErreur() == Jeu.NBESSAIS){
+				System.out.println("GAME OVER");
+			}
+			System.out.println("Fin de la partie");
 		}
-	}
 	
 	public Partie(int nbJ, String pseudo) {
 		creerJoueur(nbJ, pseudo);
