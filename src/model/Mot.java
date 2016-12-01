@@ -24,6 +24,11 @@ public class Mot{
 		//System.out.println(word);
 		System.out.println(secretMot);
 	}
+	public Mot(String mot){
+		this.word=mot;
+		initWord();
+		System.out.println(secretWord);
+	}
 	
 	public void initWord(){
 		
@@ -121,13 +126,20 @@ public class Mot{
 		return (bok == true) ? 1 : -1;
 	}
 	
-	public boolean isFinished(){
-		
-		for(char c : this.tabChar){
-			if(c == '*')
-				return false;
-		}
-		return true;
+	//methode equals
+	public boolean equals(Object obj){
+	    if (this == obj)
+	        return true;
+	    if (obj == null)
+	        return false;
+	    if (getClass() != obj.getClass())
+	        return false;
+	    Mot other = (Mot) obj;
+	    if (other.word == null && this.word != null)
+	    	return false;
+	    if (other.word != this.word)
+	    	return false;
+	   return true;
 	}
 	
 	public String getWord() {
