@@ -26,14 +26,14 @@ public class Mot{
 		System.out.println(secretWord);
 	}
 	
-	public void genererMot(){
+	public void genererNombre(){
 		i = (int)(Math.random() * 14); //14 pour 14 lignes dans le fichier dictionnaire
 		while(i > 14){
 			 i /= 2;
 		}
 	}
 	public void initWord(){
-		genererMot();
+		genererNombre();
 		
 		try {//ouverture du fichier
 			LineNumberReader fnr = new LineNumberReader(new FileReader(new File("files/dictionnaire.txt")));
