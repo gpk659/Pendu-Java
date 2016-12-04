@@ -1,15 +1,9 @@
+/**
+ * @author Grégory
+ */
 package model;
 
-/**
- * @author GrÃ©gory
- */
-
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.LineNumberReader;
-
+import java.io.*;
 import javax.swing.JOptionPane;
 
 public class Mot{
@@ -18,24 +12,28 @@ public class Mot{
 	private char[] tabChar;
 	private int error = 0;
 	private int nbreCoup = 0;
+	private int i;
 
 	public Mot(){
 		initWord();
 		//System.out.println(word);
 		System.out.println(secretWord);
 	}
+	
 	public Mot(String mot){
 		this.word=mot;
 		initWord();
 		System.out.println(secretWord);
 	}
 	
-	public void initWord(){
-		
-		int i = (int)(Math.random() * 14); //14 pour 14 lignes dans le fichier dictionnaire
+	public void genererMot(){
+		i = (int)(Math.random() * 14); //14 pour 14 lignes dans le fichier dictionnaire
 		while(i > 14){
 			 i /= 2;
 		}
+	}
+	public void initWord(){
+		genererMot();
 		
 		try {//ouverture du fichier
 			LineNumberReader fnr = new LineNumberReader(new FileReader(new File("files/dictionnaire.txt")));
@@ -54,26 +52,26 @@ public class Mot{
 			}
 			
 			/**
-			 * trim() : est utilisÃ© pour supprimer les espaces au dÃ©but et Ã  la fin du mot
-			 * toUpperCase() : convertit tous les caractÃ¨res de la chaÃ®ne en majuscules
+			 * trim() : est utilisé pour supprimer les espaces au début et Ã  la fin du mot
+			 * toUpperCase() : convertit tous les caractères de la chaine en majuscules
 			 */
 			this.word = this.word.trim().toUpperCase();
 			
 			for(int j = 0; j < this.word.length(); j++)
-			{//	on injecte une * pour chaque caractÃ¨re en parcourant le mot avec charAt
+			{//	on injecte une * pour chaque caractère en parcourant le mot avec charAt
 				this.secretWord += (this.word.charAt(j) != '\'' && this.word.charAt(j) != '-') ? "*" : this.word.charAt(j);
 			}
 			
 			fnr.close();//on ferme l'ouverture du fichier
 			this.nbreCoup = 0;
-		} catch (FileNotFoundException e) {//gestions des erreurs si l'ouverture du fichier n'est pas rÃ©ussie
+		} catch (FileNotFoundException e) {//gestions des erreurs si l'ouverture du fichier n'est pas réussie
 			JOptionPane.showMessageDialog(null, "Erreur de chargement depuis le fichier de mots !", "ERREUR", JOptionPane.ERROR_MESSAGE);
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, "Erreur de chargement depuis le fichier de mots !", "ERREUR", JOptionPane.ERROR_MESSAGE);
 		}
 		
 		/**
-		 * toCharArray : convertit les * en tableau de charactÃ¨re
+		 * toCharArray : convertit les * en tableau de charactères
 		 */
 		this.tabChar = this.secretWord.toCharArray();
 		this.error = 0;
@@ -85,16 +83,15 @@ public class Mot{
 		boolean bok=false;
 		
 		for(int i = 0; i < this.word.length(); i++){
-			
 			if(word.toUpperCase().charAt(i) == c){
 				this.tabChar[i] = c;
 				System.out.println("bonne lettre !!!!!!!");
 				bok = true;
 			}
 		}if(bok==false){
-			System.out.println("Mauvaise lettre!!!!!");
-			error++;
-		}
+				System.out.println("Mauvaise lettre!!!!!");
+				error++;
+			}
 		
 		//++this.nbreCoup;
 		this.secretWord = new String(this.tabChar);
