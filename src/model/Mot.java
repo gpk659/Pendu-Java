@@ -1,5 +1,5 @@
 /**
- * @author GrÃ©gory
+ * @author Grégory
  */
 package model;
 
@@ -52,26 +52,26 @@ public class Mot{
 			}
 			
 			/**
-			 * trim() : est utilisÃ© pour supprimer les espaces au dÃ©but et ÃƒÂ  la fin du mot
-			 * toUpperCase() : convertit tous les caractÃ¨res de la chaine en majuscules
+			 * trim() : est utilisé pour supprimer les espaces au début et Ã  la fin du mot
+			 * toUpperCase() : convertit tous les caractères de la chaine en majuscules
 			 */
 			this.word = this.word.trim().toUpperCase();
 			
 			for(int j = 0; j < this.word.length(); j++)
-			{//	on injecte une * pour chaque caractÃ¨re en parcourant le mot avec charAt
+			{//	on injecte une * pour chaque caractère en parcourant le mot avec charAt
 				this.secretWord += (this.word.charAt(j) != '\'' && this.word.charAt(j) != '-') ? "*" : this.word.charAt(j);
 			}
 			
 			fnr.close();//on ferme l'ouverture du fichier
 			this.nbreCoup = 0;
-		} catch (FileNotFoundException e) {//gestions des erreurs si l'ouverture du fichier n'est pas rÃ©ussie
+		} catch (FileNotFoundException e) {//gestions des erreurs si l'ouverture du fichier n'est pas réussie
 			JOptionPane.showMessageDialog(null, "Erreur de chargement depuis le fichier de mots !", "ERREUR", JOptionPane.ERROR_MESSAGE);
 		} catch (IOException e) {
 			JOptionPane.showMessageDialog(null, "Erreur de chargement depuis le fichier de mots !", "ERREUR", JOptionPane.ERROR_MESSAGE);
 		}
 		
 		/**
-		 * toCharArray : convertit les * en tableau de charactÃ¨res
+		 * toCharArray : convertit les * en tableau de charactères
 		 */
 		this.tabChar = this.secretWord.toCharArray();
 		this.error = 0;

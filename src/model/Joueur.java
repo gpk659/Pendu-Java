@@ -1,19 +1,12 @@
 /**
- * 
- * @author GrÃ©gory 2TL1
- * @groupe Groupe nÂ°4
- * 
+ * @author Grégory 2TL1
+ * Groupe n°4
  */
 
 package model;
 
 import java.util.Scanner;
 
-/**
- * 
- * @class  
- *
- */
 public class Joueur {
 
 	private String pseudo;
@@ -27,14 +20,14 @@ public class Joueur {
 	private char [] LettreFausse; 
 	private Scanner sc = new Scanner(System.in);
 	
-	
 	/**
-	 * 
-	 * @return : retourne la variable pour pouvoir y accÃ©der
+	 * @return : retourne la variable pour pouvoir y accéder
 	 */
+	
 	public String getNom() {
 		return pseudo;
 	}
+	
 	private void setNom(String nom) {
 		this.pseudo = nom;
 	}
@@ -42,31 +35,35 @@ public class Joueur {
 	private int getVie() {
 		return vie;
 	}
+	
 	private void setVie(int vie) {
 		this.vie = vie;
 	}
+	
 	private int getEtat() {
 		return etat;
 	}
+	
 	private void setEtat(int etat) {
 		this.etat = etat;
 	}
+	
 	private int[] getScore() {
 		return score;
 	}
+	
 	private void setScore(int[] score) {
 		this.score = score;
 	}
 	
-	
 	public String toString() {
-		return "Joueur nÂ° " + idJoueur + "\n" +"Peuso : " + pseudo + "\n"+"Il y a " /*+ nbJoueur*/ + " joueur(s)."; //existe plus voir explication plus haut ...
+		return "Joueur n° " + idJoueur + "\n" +"Peuso : " + pseudo + "\n"+"Il y a " /*+ nbJoueur*/ + " joueur(s)."; //existe plus voir explication plus haut ...
 	}
 	
 	/**
-	 * @param pseudo : nom du joueur
-	 * 
-	 */
+	* @param pseudo : nom du joueur
+	*/
+	
 	public Joueur(String pseudo) {
 		//super();       inutile
 		//nbJoueur++;    existe plus voir explication plus haut ...
