@@ -1,5 +1,8 @@
-package view;
+package vue;
 
+import java.awt.Image;
+
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 
 public class Fenetre extends JFrame {
@@ -15,6 +18,8 @@ public class Fenetre extends JFrame {
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setLocationRelativeTo(null);
+		
+		add(new Accueil());
 	
 	}
 
