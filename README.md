@@ -1,7 +1,14 @@
 # Pendu-Java
+
+
+
+
 Projet de Java qui simulera un Pendu
 
-https://github.com/gpk659/Pendu-Java/wiki
 
 
-Credit by Grégory Pyck - Simon Barré - Amine Nafia © Copyright 2016-2017
+
+
+
+
+Credit by GrÃ©gory Pyck - Simon BarrÃ© - Amine Nafia Â© Copyright 2016-2017

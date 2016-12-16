@@ -1,63 +1,78 @@
+/**
+ * @author Grégory 2TL1
+ * Groupe n°4
+ */
+
 package model;
 
-/**
- * 
- */
+import java.util.Scanner;
+import view.View;
 
-/**
- * @author Grégory
- *
- */
 public class Joueur {
 
-	public String nom;
-	public String prenom;
-	public int idJoueur=0;
+	private String pseudo;
+	private int idJoueur;
 	public int [] score;
 	public int vie;
 	public int etat;
-	
 	private String motFinal;
 	protected String motEnCours;
+	private char [] LettreFausses; 
+	private Scanner sc = new Scanner(System.in);
 	
+	/**
+	 * @return : retourne la variable pour pouvoir y accéder
+	 */
 	
-	// getters & setters pour y acceder depuis les autres classes
 	public String getNom() {
-		return nom;
+		return pseudo;
 	}
+	
 	private void setNom(String nom) {
-		this.nom = nom;
+		this.pseudo = nom;
 	}
-	private String getPrenom() {
-		return prenom;
-	}
-	private void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
+
 	private int getVie() {
 		return vie;
 	}
+	
 	private void setVie(int vie) {
 		this.vie = vie;
 	}
+	
 	private int getEtat() {
 		return etat;
 	}
+	
 	private void setEtat(int etat) {
 		this.etat = etat;
 	}
+	
 	private int[] getScore() {
 		return score;
 	}
+	
 	private void setScore(int[] score) {
 		this.score = score;
 	}
 	
-	@Override
 	public String toString() {
-		return "Joueur n° " + idJoueur + "\n" +"Nom : " + nom + "\n" +"Prénom : " + prenom + "\n";
+		return "Joueur n° " + idJoueur + "\n" +"Peuso : " + pseudo + "\n"+"Il y a " + " joueur(s)."; 
 	}
 	
+	/**
+	* @param pseudo : nom du joueur
+	*/
+	
+	public Joueur(String pseudo) {
+		this.pseudo = pseudo;
+	}
+	
+	public Joueur() {
+		System.out.println("Quel est votre pseudo ? ");
+		String strPseudo = sc.nextLine();
+		this.pseudo = strPseudo;
+	}
 	
 	//methode equals
 	public boolean equals(Object obj){
@@ -68,13 +83,9 @@ public class Joueur {
 	    if (getClass() != obj.getClass())
 	        return false;
 	    Joueur other = (Joueur) obj;
-	    if(other.nom==null && this.nom!=null)
+	    if(other.pseudo==null && this.pseudo!=null)
 	        return false;
-	     if(!other.nom.equals(this.nom))
-	        return false;
-	    if(other.prenom==null && this.prenom!=null)
-	        return false;
-	   if(!other.prenom.equals(this.prenom))
+	     if(!other.pseudo.equals(this.pseudo))
 	        return false;
 	    if(other.idJoueur == 0 && this.idJoueur!=idJoueur)
 	        return false;
@@ -84,5 +95,4 @@ public class Joueur {
 	        return false;
 	   return true;
 	}
-
 }
