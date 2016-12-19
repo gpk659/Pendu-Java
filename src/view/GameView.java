@@ -42,19 +42,19 @@ public class GameView extends ZContainer {
 		
 		JPanel head = new JPanel();
 		this.imageLabel = new ImageLabel(); 
-		this.imageLabel.setPreferredSize(new Dimension(450, 600));
+		this.imageLabel.setPreferredSize(new Dimension(450, 650));
 		this.imageLabel.setVerticalAlignment(JLabel.CENTER);
 		this.nombreMot = new JLabel();
 		this.score = new JLabel(); 
 		
-		this.dimension = new Dimension(400, 530); 
+		this.dimension = new Dimension(450, 600); 
 		rightContent.setPreferredSize(this.dimension);
 		rightContent.add(this.imageLabel, BorderLayout.CENTER);
 		rightContent.setBackground(Color.white);
 		
 		leftContent.setPreferredSize(this.dimension);
 		
-		Dimension dim = new Dimension(410, 200);
+		Dimension dim = new Dimension(410, 300);
 		head.setPreferredSize(new Dimension(410, 100));
 		
 		this.nombreMot.setText("Nombre de mots trouvés : 0");
