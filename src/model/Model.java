@@ -2,7 +2,7 @@ package model;
 
 import java.util.Observable;
 import java.util.Scanner;
-
+import view.*;
 
 public class Model extends Observable {
 	
@@ -11,16 +11,30 @@ public class Model extends Observable {
 	protected Joueur tabNbJoueur[]; 
 	private Mot mot;
 	protected int points[] = {30,20,15,10,5,1,0};
-	private Scanner sc = new Scanner(System.in);
+	//private Scanner sc = new Scanner(System.in);
+	private View view;
 	
 	public void definirJoueurActif(){}
 	
 	public Model() {
-		System.out.println("Conbien de joueur ?");
-		creerJoueur(sc.nextInt());
-
+		creerJoueur(1);
 		this.mot = new Mot();
 	}
+	
+	public void checkWord(Mot mot, char c) {
+		while (mot.getNombreErreur() != Model.NBESSAIS && !(mot.getSecretWord().equals(mot.getWord()))) {
+			char lettre = c;			
+			mot.verifyWord(lettre);
+			view.show("vous avez fait " + mot.getNombreErreur() + " erreur(s)");
+		}
+		if(mot.getSecretWord().equals(mot.getWord())){
+			view.show("Bravo vous avez trouve le mot!");
+		}
+		if (mot.getNombreErreur() == Model.NBESSAIS){
+			view.show("GAME OVER");
+		}
+		view.show("Fin de la partie");
+		}
 		
 	
 	public Model(int nbJ, String pseudo) {

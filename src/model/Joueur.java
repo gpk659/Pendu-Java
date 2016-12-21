@@ -6,7 +6,7 @@
 package model;
 
 import java.util.Scanner;
-import view.View;
+import view.*;
 
 public class Joueur {
 
@@ -18,7 +18,8 @@ public class Joueur {
 	private String motFinal;
 	protected String motEnCours;
 	private char [] LettreFausses; 
-	private Scanner sc = new Scanner(System.in);
+	private View view;
+	//private Scanner sc = new Scanner(System.in);
 	
 	/**
 	 * @return : retourne la variable pour pouvoir y accéder
@@ -69,9 +70,10 @@ public class Joueur {
 	}
 	
 	public Joueur() {
-		System.out.println("Quel est votre pseudo ? ");
-		String strPseudo = sc.nextLine();
-		this.pseudo = strPseudo;
+		//System.out.println("Quel est votre pseudo ?");
+		this.view.show("Quel est votre pseudo ?");
+		//String strPseudo = sc.nextLine();
+		this.pseudo = view.getString();
 	}
 	
 	//methode equals

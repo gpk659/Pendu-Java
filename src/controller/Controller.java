@@ -18,20 +18,6 @@ public class Controller {
 	    this.model = model;
 	}
 	
-	public void checkWord(Mot mot, char c) {
-		while (mot.getNombreErreur() != Model.NBESSAIS && !(mot.getSecretWord().equals(mot.getWord()))) {
-			char lettre = c;			
-			mot.verifyWord(lettre);
-			view.display("vous avez fait " + mot.getNombreErreur() + " erreur(s)");
-		}
-		if(mot.getSecretWord().equals(mot.getWord())){
-			view.display("Bravo vous avez trouve le mot!");
-		}
-		if (mot.getNombreErreur() == Model.NBESSAIS){
-			view.display("GAME OVER");
-		}
-		view.display("Fin de la partie");
-		}
 
 	
 	/* network

@@ -11,7 +11,6 @@ public abstract class View implements Observer {
     protected Controller controller;
     protected Model model;
     
-    protected boolean gameStarted = false;
 
     public View(Controller controller, Model model) {
         this.controller = controller;
@@ -27,5 +26,8 @@ public abstract class View implements Observer {
         this.controller = controller;
     }
     
-    public abstract void display(String msg);	
+    public abstract void show(String msg);
+    
+    public abstract String getString();
+    
 }

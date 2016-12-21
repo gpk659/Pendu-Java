@@ -12,6 +12,7 @@ public class Main {
         //Controller guiController = new Controller(model);
         
         ConsoleView console = new ConsoleView(consoleController, model);
-	}
+        
+       	}
 
 }
