@@ -19,7 +19,7 @@ public class Joueur {
 	protected String motEnCours;
 	private char [] LettreFausses; 
 	private View view;
-	//private Scanner sc = new Scanner(System.in);
+	private Scanner sc = new Scanner(System.in);
 	
 	/**
 	 * @return : retourne la variable pour pouvoir y accéder
@@ -70,10 +70,10 @@ public class Joueur {
 	}
 	
 	public Joueur() {
-		//System.out.println("Quel est votre pseudo ?");
-		this.view.show("Quel est votre pseudo ?");
-		//String strPseudo = sc.nextLine();
-		this.pseudo = view.getString();
+		System.out.println("Quel est votre pseudo ?");
+		//view.show("Quel est votre pseudo ?");
+		String strPseudo = sc.nextLine();
+		//this.pseudo = view.getString();
 	}
 	
 	//methode equals

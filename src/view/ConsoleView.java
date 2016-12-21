@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 import controller.*;
 import model.*;
-import view.*;
 
 
 public class ConsoleView extends View implements Observer {

@@ -15,15 +15,7 @@ public abstract class View implements Observer {
     public View(Controller controller, Model model) {
         this.controller = controller;
         this.model = model;
-    }
-
-   
-    public void addModel(Observable model) {
         model.addObserver(this);
-    }
-
-    public void setController(Controller controller) {
-        this.controller = controller;
     }
     
     public abstract void show(String msg);
