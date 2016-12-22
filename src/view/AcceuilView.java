@@ -1,6 +1,6 @@
 package view;
 /**
- * @author Grégory 2TL1 Groupe n°4
+ * @author GrÃ©gory 2TL1 Groupe nÂ°4
  */
 
 /*
@@ -21,7 +21,7 @@ import javax.swing.SwingConstants;
 public class AcceuilView extends Container {
 	
 	/**
-	 * @param dim : La classe Dimension encapsule la largeur et la hauteur d'un composant (en précision d'entier) dans un seul objet.
+	 * @param dim : La classe Dimension encapsule la largeur et la hauteur d'un composant (en prÃ©cision d'entier) dans un seul objet.
 	 */
 	public AcceuilView(Dimension dim){
 		super(dim);
@@ -43,7 +43,7 @@ public class AcceuilView extends Container {
 		JTextArea texte = new JTextArea("Un peu de lecture...\n"
 										+"Bienvenue sur notre jeu du pendu.\n Vous avez 6 chances pour trouver un mot.\n"
 										+"Vous aurez un certain nombre de point en fonction du nombre de fautes que vous avez comises.\n"
-										+"Alors vous êtes prêt ? A vous de jouer !\n"
+										+"Alors vous Ãªtes prÃªt ? A vous de jouer !\n"
 										+"Cliquer sur 'File' et ensuite sur 'Niew' pour commencer une partie... ENJOY ! :)");
 		texte.setFont(new Font("comics30", Font.PLAIN, 25));
 		texte.setEditable(false);
