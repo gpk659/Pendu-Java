@@ -1,6 +1,6 @@
 /**
- * @author Grégory 2TL1
- * Groupe n°4
+ * @author GrÃ©gory 2TL1
+ * Groupe nÂ°4
  */
 
 package model;
@@ -21,7 +21,7 @@ public class Joueur {
 	private Scanner sc = new Scanner(System.in);
 	
 	/**
-	 * @return : retourne la variable pour pouvoir y accéder
+	 * @return : retourne la variable pour pouvoir y accÃ©der
 	 */
 	
 	public String getNom() {
@@ -57,7 +57,7 @@ public class Joueur {
 	}
 	
 	public String toString() {
-		return "Joueur n° " + idJoueur + "\n" +"Peuso : " + pseudo + "\n"+"Il y a " /*+ nbJoueur*/ + " joueur(s)."; //existe plus voir explication plus haut ...
+		return "Joueur nÂ° " + idJoueur + "\n" +"Peuso : " + pseudo + "\n"+"Il y a " /*+ nbJoueur*/ + " joueur(s)."; //existe plus voir explication plus haut ...
 	}
 	
 	/**
