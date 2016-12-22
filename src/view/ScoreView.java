@@ -34,9 +34,9 @@ public class ScoreView extends Container {
 	 * @param name : nom du joueur
 	 * @param points : score du joueur selon le nombre de fautes comises
 	 */
-	public void ajoutScore(String name, int points){
+	public void ajoutScore(String name, Joueur j){
 		this.pseudo= name;
-		this.score = points;
+		this.score = initPoint(j); 
 		model.addRow(new Object[]{pseudo, score});
 	}
 
