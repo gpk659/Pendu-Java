@@ -3,6 +3,10 @@ package view;
  * @author Grégory 2TL1 Groupe n°4
  */
 
+/*
+ * bug d'affichage 
+ * surement qu'on ne vas pas l'ajouter au jeu
+ */
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -26,7 +30,12 @@ public class AcceuilView extends Container {
 	}
 	
 	public void init(){
+		JPanel imgPanel = new JPanel();
 		JLabel image = new JLabel(new ImageIcon("images/accueil.jpg"));	
-		this.panel.add(image, BorderLayout.CENTER);		
+		imgPanel.add(image, BorderLayout.CENTER);
+		image.setVerticalAlignment(JLabel.CENTER);
+		imgPanel.setPreferredSize(new Dimension(1000,700));
+		this.panel.add(imgPanel);
+		imgPanel.setBackground(Color.white);
 	}
 }
