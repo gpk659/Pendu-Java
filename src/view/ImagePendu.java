@@ -1,6 +1,6 @@
 package view;
 /**
- * @author Grégory 2TL1 Groupe n°4
+ * @author GrÃ©gory 2TL1 Groupe nÂ°4
  */
 import java.awt.Color;
 import java.awt.Graphics;
@@ -13,11 +13,11 @@ import javax.swing.JLabel;
 
 public class ImagePendu extends JLabel{
 
-	private String imagePath = "images/trump.jpg";
+	private String imagePath = "images/trump0.jpg";
 	public ImagePendu(){	}
 
 	/**
-	 * @param path : adresse de l'image à afficher
+	 * @param path : adresse de l'image Ã  afficher
 	 */
 	public ImagePendu(String path){
 		this.imagePath = path;
@@ -29,7 +29,7 @@ public class ImagePendu extends JLabel{
 		try {
 			Image img = ImageIO.read(new File(this.imagePath));
 			g.drawImage(img, 0, 0, this);
-			ConsoleView.msgVConsole("Chargement de l'image réussie !");
+			ConsoleView.msgVConsole("Chargement de l'image rÃ©ussie !");
 		} catch (IOException e) {
 			e.printStackTrace();
 			ConsoleView.msgVConsole("Erreur au chargement de l'image..!");
@@ -41,6 +41,12 @@ public class ImagePendu extends JLabel{
 	 */
 	public void setImagePath(String path){
 		this.imagePath = path;
-		//repaint();
+		
+		/*
+		 * repaint(); permet de redessiner l'image au moment ou on change de chemin pour afficher une image
+		 * sinon l'image ne change pas en fonction des erreurs
+		 * on utilise donc repaint pour afficher la nouvelle image en fonction du nombre d'erreurs
+		 */
+		repaint();
 	}
 }
