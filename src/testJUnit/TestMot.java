@@ -1,6 +1,6 @@
 package testJUnit;
 /**
- * @author Grégory & Simon
+ * @author GrÃ©gory & Simon
  */
 import static org.junit.Assert.*;
 import org.junit.Test;
