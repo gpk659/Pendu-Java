@@ -6,7 +6,7 @@ package model;
 import java.util.*;
 
 /**
- * @author Grégory
+ * @author GrÃ©gory
  *
  */
 public class Score {
@@ -32,48 +32,8 @@ public class Score {
 	  }
 	  
 	  public void initPoint(int nbErreur){
-		  switch (nbErreur){
-
-		      case 0:
-		          this.point += 40;
-		          this.pointMarque = 40;
-		          break;
-		
-		      case 1:
-		    	  this.point += 30;
-		    	  this.pointMarque = 30;
-		          break;
-		
-		      case 2:
-		    	  this.point += 25;
-		    	  this.pointMarque = 25;
-		          break;
-		
-		      case 3:
-		    	  this.point += 20;
-		    	  this.pointMarque = 20;
-		          break;
-		
-		      case 4:
-		    	  this.point += 15;
-		    	  this.pointMarque = 15;
-		          break;
-		
-		      case 5:
-		    	  this.point += 10;
-		    	  this.pointMarque = 10;
-		          break;
-		
-		      case 6:
-		    	  this.point += 5;
-		    	  this.pointMarque = 5;
-		          break;
-		
-		      default:
-		    	  this.point += 0;
-
-	      }
-
+		public void initPoint(Joueur j){
+		 j.score[j.score.length+1]= Model.mot.getNombreErreur();
 	  }
 
 	  public String getNom(){
