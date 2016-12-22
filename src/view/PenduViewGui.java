@@ -1,6 +1,6 @@
 package view;
 /**
- * @author Grégory 2TL1 Groupe n°4
+ * @author GrÃ©gory 2TL1 Groupe nÂ°4
  */
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -96,7 +96,7 @@ public class PenduViewGui implements Observer {
 			public void actionPerformed(ActionEvent e) { 
 				System.exit(0);/*permet d'arreter le programme*/ }
 		});
-		fichier.addSeparator();//pour afficher une ligne pour séparer
+		fichier.addSeparator();//pour afficher une ligne pour sÃ©parer
 		fichier.add(quitter);
 
 		help = new JMenu("   Help   ");
@@ -118,23 +118,23 @@ public class PenduViewGui implements Observer {
 		regles.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(fenetre,
-						"Les règles : \n\n"+
-						"Le pendu est un jeu où il faut deviner un mot en trouvant une à une les lettres qui le composent en faisant le minimum d'erreurs possible.\n\n"+
-						"Le principe est simple : A chaque fois, vous devez proposer une lettre qui vous semble appartenir au mot cherché.\n\n"+
-						"Si le mot que vous cherchez ne contient pas cette lettre, c'est une erreur. \nEt chaque erreur le jeu rajoute un morceau du dessin qui représente un condamné que l'on va pendre.\n\n"+ 
-						"Si le mot contient la lettre, vous devez proposer une nouvelle lettre jusqu'à ce que vous trouviez le mot.\n\n"+
-						"Mais attention, vous n'avez droit qu'à un nombre limité d'erreur. \nDès que le dessin est terminé, c'est que vous avez atteint votre maximum d'erreur : vous perdez donc la partie.\n\n"+
+						"Les rÃ¨gles : \n\n"+
+						"Le pendu est un jeu oÃ¹ il faut deviner un mot en trouvant une Ã  une les lettres qui le composent en faisant le minimum d'erreurs possible.\n\n"+
+						"Le principe est simple : A chaque fois, vous devez proposer une lettre qui vous semble appartenir au mot cherchÃ©.\n\n"+
+						"Si le mot que vous cherchez ne contient pas cette lettre, c'est une erreur. \nEt chaque erreur le jeu rajoute un morceau du dessin qui reprÃ©sente un condamnÃ© que l'on va pendre.\n\n"+ 
+						"Si le mot contient la lettre, vous devez proposer une nouvelle lettre jusqu'Ã  ce que vous trouviez le mot.\n\n"+
+						"Mais attention, vous n'avez droit qu'Ã  un nombre limitÃ© d'erreur. \nDÃ¨s que le dessin est terminÃ©, c'est que vous avez atteint votre maximum d'erreur : vous perdez donc la partie.\n\n"+
 						"Si vous trouvez le mot avant que le dessin se termine, vous gagnez la partie.\n\n"+
-						"		Mot trouvé sans erreur\t\t 40 pts\n		Mot trouvé avec une erreur 30 pts\n" +
-						"		Mot trouvé avec deux erreurs\t 25 pts\n		Mot trouvé avec trois erreurs 20 pts\n\t		Mot trouvé avec quatre erreurs 15 pts\n" +
-						"		Mot trouvé avec cinq erreurs\t 10 pts\n		Mot trouvé avec six erreurs 5 pts\n\n\n" +
+						"		Mot trouvÃ© sans erreur\t\t 40 pts\n		Mot trouvÃ© avec une erreur 30 pts\n" +
+						"		Mot trouvÃ© avec deux erreurs\t 25 pts\n		Mot trouvÃ© avec trois erreurs 20 pts\n\t		Mot trouvÃ© avec quatre erreurs 15 pts\n" +
+						"		Mot trouvÃ© avec cinq erreurs\t 10 pts\n		Mot trouvÃ© avec six erreurs 5 pts\n\n\n" +
 						"Je vous souhaite bien du plaisir !"
-						, "Règles du Pendu", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("images/trump-icon.jpg"));
+						, "RÃ¨gles du Pendu", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("images/trump-icon.jpg"));
 			}
 		});
 		help.add(regles);
 
-		help.addSeparator();//pour afficher une ligne pour séparer
+		help.addSeparator();//pour afficher une ligne pour sÃ©parer
 		apropos = new JMenuItem(" About ");
 		help.add(apropos);
 		apropos.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_I,
@@ -142,7 +142,7 @@ public class PenduViewGui implements Observer {
 		apropos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				JOptionPane.showMessageDialog(fenetre,"Projet Java Ephec 2016-2017.\n"
-						+" Created by Grégory, Simon & Amine.\n"
+						+" Created by GrÃ©gory & Simon.\n"
 						,"About", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("images/copyright.png"));	
 			}
 		});
@@ -168,15 +168,15 @@ public class PenduViewGui implements Observer {
 		welcome();
 	}
 
-	//méthode qui se lance au démarage du jeu
+	//mÃ©thode qui se lance au dÃ©marage du jeu
 	public void welcome(){
 		JOptionPane.showMessageDialog(fenetre,
 			"Un peu de lecture...\n\n"
 			+"Bienvenue sur notre jeu du pendu.\n Vous avez 6 chances pour trouver un mot.\n"
 			+"Vous aurez un certain nombre de points en fonction du nombre de fautes que vous avez comises.\n"
-			+"Alors vous êtes prêt ? A vous de jouer !\n\n"
+			+"Alors vous Ãªtes prÃªt ? A vous de jouer !\n\n"
 			+"Cliquer sur 'File' et ensuite sur 'Niew' pour commencer une partie... ENJOY ! :)"
-			+"\n\nPS : Ceci est une représentation de Trump, ceci est en aucun cas un jugement sur son image."
+			+"\n\nPS : Ceci est une reprÃ©sentation de Trump, ceci est en aucun cas un jugement sur son image."
 			, "Bienvenue...Vous voici dans notre jeu du pendu...", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("images/trump-icon.jpg"));
 	}
 	public static void msgViewGui(String msg, String titre){
@@ -193,7 +193,7 @@ public class PenduViewGui implements Observer {
 	public void restart(String word) {}
 	
 	public void accueil(){
-		System.out.println("mise à jour de l'accueil...");
+		System.out.println("mise Ã  jour de l'accueil...");
 		welcome();
 	}
 }
