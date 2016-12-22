@@ -1,6 +1,6 @@
 package view;
 /**
- * @author Grégory 2TL1 Groupe n°4
+ * @author GrÃ©gory 2TL1 Groupe nÂ°4
  */
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -23,7 +23,7 @@ public class ScoreView extends Container {
 	DefaultTableModel model;
 
 	/**
-	 * @param dim : La classe Dimension encapsule la largeur et la hauteur d'un composant (en précision d'entier) dans un seul objet.
+	 * @param dim : La classe Dimension encapsule la largeur et la hauteur d'un composant (en prÃ©cision d'entier) dans un seul objet.
 	 */
 	public ScoreView(Dimension dim){
 		super(dim);
@@ -46,14 +46,14 @@ public class ScoreView extends Container {
 		JPanel head = new JPanel();
 		JLabel titre = new JLabel();
 		
-		titre.setText("Tableau des scores des différents joueurs");
+		titre.setText("Tableau des scores des diffÃ©rents joueurs");
 		titre.setHorizontalAlignment(JLabel.CENTER);
 		titre.setFont(Harlow);
 		head.add(titre);
 
 		this.dimension = new Dimension(400, 600); 
 		rightContent.setPreferredSize(this.dimension);
-		rightContent.add(new JLabel(new ImageIcon("images/trump.jpg")), BorderLayout.CENTER);
+		rightContent.add(new JLabel(new ImageIcon("images/trump7.jpg")), BorderLayout.CENTER);
 		rightContent.setBackground(Color.white);
 
 		this.dimension = new Dimension(500, 600);
@@ -68,7 +68,7 @@ public class ScoreView extends Container {
 		model.addColumn("Score (points)");
 		//creation d'un nouveau tableau
 		JTable table = new JTable(model);
-		//Ajoute des données dans le tableau via la méthode ajoutScore();
+		//Ajoute des donnÃ©es dans le tableau via la mÃ©thode ajoutScore();
 		ajoutScore("greg", 25);
 		ajoutScore("simon",15);
 		ajoutScore("joueurCinq",20);
