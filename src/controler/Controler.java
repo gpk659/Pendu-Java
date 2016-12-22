@@ -1,6 +1,6 @@
 package controler;
 /**
- * @author GrÈgory
+ * @author Gr√©gory
  */
 import model.Model;
 import observer.Observable;
@@ -10,7 +10,7 @@ public class Controler {
 	private Model model;
 
 	/**
-	 * @param mod : on passe le modele en paramËtre
+	 * @param mod : on passe le modele en param√®tre
 	 */
 	public Controler(Observable mod){
 		this.model = (Model)mod;
@@ -23,27 +23,27 @@ public class Controler {
 
 		switch(c){
 			case 'A':
-				char tabA[] = {'¿', '¬', 'ƒ', c};
+				char tabA[] = {'√Ä', '√Ç', '√Ñ', c};
 				this.model.verifLettre(tabA);
 				break;
 			case 'C':
-				char tabC[] = {'«', c};
+				char tabC[] = {'√á', c};
 				this.model.verifLettre(tabC);
 				break;
 			case 'E':
-				char tabE[] = {'…', '»', ' ', 'À', c};
+				char tabE[] = {'√â', '√à', '√ä', '√ã', c};
 				this.model.verifLettre(tabE);
 				break;
 			case 'I':
-				char tabI[] = {'Œ', 'œ', c};
+				char tabI[] = {'√é', '√è', c};
 				this.model.verifLettre(tabI);
 				break;
 			case 'O':
-				char tabO[] = {'‘', '÷', c};
+				char tabO[] = {'√î', '√ñ', c};
 				this.model.verifLettre(tabO);
 				break;
 			case 'U':
-				char tabU[] = {'€', '‹', c};
+				char tabU[] = {'√õ', '√ú', c};
 				this.model.verifLettre(tabU);
 				break;
 			default :
