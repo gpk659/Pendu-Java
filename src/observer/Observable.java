@@ -3,7 +3,7 @@ package observer;
 import model.Score;
 
 /**
- * @author Grégory
+ * @author GrÃ©gory
  *
  */
 public interface Observable {
