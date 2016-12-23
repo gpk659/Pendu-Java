@@ -6,6 +6,7 @@
 Projet de Java qui simulera un Pendu
 
 
+Télécharger le fichier zip contenant le .jar ainsi que les images et le dictionnairaie.
 
 
 
