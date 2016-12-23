@@ -27,8 +27,6 @@ public class Model implements Observable {
 		this.score = new Score();
 		this.mot = new Mot();
 		image = new ImageIcon("images/trump.jpg");
-		//this.scoreSerializer = new ScoreSerializer();
-
 	}
 
 	public Mot getMot(){
@@ -66,10 +64,11 @@ public class Model implements Observable {
 
 			if(this.mot.getNombreErreur() == 7){
 
-				msgResultat = "Le mot était :\n\t" + this.mot.getWord() +". \nVous avez fait 0 points...\nVous avez fait "+this.mot.getNombreErreur()+" fautes";
+				msgResultat = "Vous etes Pendu !\n Le mot était : " + this.mot.getWord() +". \nVous avez fait 0 points...\nVous avez fait "+this.mot.getNombreErreur()+" fautes.\nPartie terminée !";
 				
 				ConsoleView.msgVConsole(msgResultat);
-				PenduViewGui.msgViewGui(msgResultat, "Vous avez perdu...");
+				//PenduViewGui.msgViewGui(msgResultat, "Vous avez perdu...");
+				PenduViewGui.msgFinPartie(msgResultat, "Vous avez perdu !", "images/penduVintage.jpg");
 				this.accueilObserver();
 			}
 			else{
@@ -109,10 +108,11 @@ public class Model implements Observable {
 			this.notifyObserver();
 
 			if(this.mot.getNombreErreur() == 7){
-				msgResultat = "Le mot était :\n\t" + this.mot.getWord() +". \nVous avez fait 0 points...\nVous avez fait "+this.mot.getNombreErreur()+" fautes";
+				msgResultat = "Vous etes Pendu !\n Le mot était : " + this.mot.getWord() +". \nVous avez fait 0 points...\nVous avez fait "+this.mot.getNombreErreur()+" fautes.\nPartie terminée !";
 				
 				ConsoleView.msgVConsole(msgResultat);
-				PenduViewGui.msgViewGui(msgResultat, "Vous avez perdu...");
+				//PenduViewGui.msgViewGui(msgResultat, "Vous avez perdu...");
+				PenduViewGui.msgFinPartie(msgResultat, "Vous avez perdu !", "images/penduVintage.jpg");
 				
 				this.accueilObserver();
 				
