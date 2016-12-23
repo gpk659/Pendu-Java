@@ -31,9 +31,8 @@ public class Score {
 		  return point;
 	  }
 	  
-	  public void initPoint(int nbErreur){
-		public void initPoint(Joueur j){
-		 j.score[j.score.length+1]= Model.mot.getNombreErreur();
+          public void initPoint(Joueur j){
+		j.score[j.score.length+1]= Model.mot.getNombreErreur();
 	  }
 
 	  public String getNom(){
